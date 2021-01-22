@@ -465,7 +465,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+           //return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
@@ -509,7 +509,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+           //return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
@@ -553,7 +553,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+          // return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
@@ -597,7 +597,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+           //return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
@@ -641,7 +641,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+           //return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
@@ -685,7 +685,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+           //return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
@@ -729,7 +729,7 @@ return new Promise((resolve, reject) => {
       if(result.err_no == 0) {
           message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
 	  console.log(`【视频】🎉${result.err_tips}，获得:${result.data.amount}；`)
-           return showmsg()
+           //return showmsg()
         }
       else{
           message += '⚠️异常:'+result.err_tips+'\n'+'慢点看，不要慌，一会恢复\n'
