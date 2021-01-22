@@ -700,24 +700,24 @@ return new Promise((resolve, reject) => {
 function watch_video60() {
 return new Promise((resolve, reject) => {
   let watch_videourl ={
-    url: `https://ib-hl.snssdk.com/luckycat/hotsoon/v1/task/done/daily_read_60m?version_code=7.6.1&app_name=live_stream_lite&vid=F8488563-79A8-4F10-8313-B25025043D7F&device_id=68445942781&channel=App%20Store&new_nav=0&aid=1350&ab_version=2067445,2063843,1944969,2056421,1698610,2050796,1479194,1258912,1810159,1521584,2071008,2054328,2081927,1802649,2031266,1477984,2032795,1432944,1569025,2002020,1568501,2061162,2081356,2065550,2071381,1618171,2076907,1830688,1340192,2081549,2078562,1801795,2063340,2027697,1880619,1917928,2071181,1993142,1856843,2080540,2033170,1978301,2014044,1747490,1745644,1972816,2066270,2081421,1317441,2025428,692223,1683111,1974796,2062707,2069850,1788903,1399159,1019139,2000818,1992860,1032070,1973126,1776523,1540549,2034028,1502678,2003549,1751686,2078274,1572498,2084303,2008903,1409058,1837386,2080075,1625927,1568501&ab_group=1568501&screen_width=750&client_request_id=343aec72105639b7047ffabd7f4b8509&openudid=212febcfeb5820b579e6d22c17bf89b70f07fc40&live_sdk_version=7.6.1&update_version_code=7611&os_api=18&ws_status=CLOSED&ac=WIFI&mccmnc=&os_version=14.0&client_version_code=761&device_platform=iphone&iid=4327299917021549&device_type=iPad7,5&idfa=71A7ADD8-40B1-4D5F-BCA0-73E278451A36`,
+    url: `https://ib-hl.snssdk.com/luckycat/hotsoon/v1/task/done/daily_read_60m?version_code=7.6.1&app_name=live_stream_lite&vid=F8488563-79A8-4F10-8313-B25025043D7F&device_id=68445942781&new_nav=0&channel=App%20Store&aid=1350&ab_group=1568501&screen_width=750&client_request_id=c8e5da440832dc7eaa600d744edbcfae&openudid=212febcfeb5820b579e6d22c17bf89b70f07fc40&live_sdk_version=7.6.1&update_version_code=7611&os_api=18&ws_status=CONNECTED&ac=WIFI&mccmnc=&os_version=14.2&client_version_code=761&device_platform=iphone&iid=4327299917021549&device_type=iPad7,5&idfa=71A7ADD8-40B1-4D5F-BCA0-73E278451A36`,
     headers: {
     "Accept": "application/json",
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
     "Content-Length": "0",
     "Content-Type": "application/json; encoding=utf-8",
-    "Cookie": "odin_tt=5a1e1602d0df8e51a054d1471e5d0230012426798e9a05aee97adf3903e2ac9d9873a7f4d346fc0adccbbd6cc7b23ba59192ad3cfec61514aeeabd7af0798dde; d_ticket=c34ab6943249c08f88595471efa5a6dea8305; sid_guard=94fa705bf6685d07cd4adbe28f457c44%7C1602250593%7C5184000%7CTue%2C+08-Dec-2020+13%3A36%3A33+GMT; uid_tt=cf316afde271fa7023ae424b264f6d27; uid_tt_ss=cf316afde271fa7023ae424b264f6d27; sid_tt=94fa705bf6685d07cd4adbe28f457c44; sessionid=94fa705bf6685d07cd4adbe28f457c44; sessionid_ss=94fa705bf6685d07cd4adbe28f457c44; install_id=4327299917021549; ttreq=1$dbe44cfcdabaa32e39e6a764c85d3c2c3fd111cf; excgd=20201010",
+    "Cookie": "odin_tt=5a1e1602d0df8e51a054d1471e5d0230012426798e9a05aee97adf3903e2ac9d9873a7f4d346fc0adccbbd6cc7b23ba59192ad3cfec61514aeeabd7af0798dde; d_ticket=c34ab6943249c08f88595471efa5a6dea8305; sid_guard=94fa705bf6685d07cd4adbe28f457c44%7C1610967020%7C5184000%7CFri%2C+19-Mar-2021+10%3A50%3A20+GMT; uid_tt=cf316afde271fa7023ae424b264f6d27; uid_tt_ss=cf316afde271fa7023ae424b264f6d27; sid_tt=94fa705bf6685d07cd4adbe28f457c44; sessionid=94fa705bf6685d07cd4adbe28f457c44; sessionid_ss=94fa705bf6685d07cd4adbe28f457c44; install_id=4327299917021549; ttreq=1$dbe44cfcdabaa32e39e6a764c85d3c2c3fd111cf",
     "Host": "ib-hl.snssdk.com",
-    "User-Agent": "HotsoonLite 7.6.1 rv:7611 (iPad; iOS 14.0; zh_CN) Cronet",
-    "X-Gorgon": "8402204c0000b1a83781f9b8197365f575f0fbc43716af344ca4",
-    "X-Khronos": "1602333378",
-    "X-SS-Cookie": "excgd=20201010; d_ticket=c34ab6943249c08f88595471efa5a6dea8305; odin_tt=5a1e1602d0df8e51a054d1471e5d0230012426798e9a05aee97adf3903e2ac9d9873a7f4d346fc0adccbbd6cc7b23ba59192ad3cfec61514aeeabd7af0798dde; sessionid=94fa705bf6685d07cd4adbe28f457c44; sessionid_ss=94fa705bf6685d07cd4adbe28f457c44; sid_guard=94fa705bf6685d07cd4adbe28f457c44%7C1602250593%7C5184000%7CTue%2C+08-Dec-2020+13%3A36%3A33+GMT; sid_tt=94fa705bf6685d07cd4adbe28f457c44; uid_tt=cf316afde271fa7023ae424b264f6d27; uid_tt_ss=cf316afde271fa7023ae424b264f6d27; install_id=4327299917021549; ttreq=1$dbe44cfcdabaa32e39e6a764c85d3c2c3fd111cf",
+    "User-Agent": "HotsoonLite 7.6.1 rv:7611 (iPad; iOS 14.2; zh_CN) Cronet",
+    "X-Gorgon": "8402a0650000c911010cd7f5a4e4f48b97888945e98bf187d1ab",
+    "X-Khronos": "1611323914",
+    "X-SS-Cookie": "install_id=4327299917021549; ttreq=1$dbe44cfcdabaa32e39e6a764c85d3c2c3fd111cf; sessionid=94fa705bf6685d07cd4adbe28f457c44; sessionid_ss=94fa705bf6685d07cd4adbe28f457c44; sid_guard=94fa705bf6685d07cd4adbe28f457c44%7C1610967020%7C5184000%7CFri%2C+19-Mar-2021+10%3A50%3A20+GMT; sid_tt=94fa705bf6685d07cd4adbe28f457c44; uid_tt=cf316afde271fa7023ae424b264f6d27; uid_tt_ss=cf316afde271fa7023ae424b264f6d27; d_ticket=c34ab6943249c08f88595471efa5a6dea8305; odin_tt=5a1e1602d0df8e51a054d1471e5d0230012426798e9a05aee97adf3903e2ac9d9873a7f4d346fc0adccbbd6cc7b23ba59192ad3cfec61514aeeabd7af0798dde",
     "X-SS-STUB": "D41D8CD98F00B204E9800998ECF8427E",
     "sdk-version": "1",
-    "tt-request-time": "1602333379237",
-    "x-Tt-Token": "0094fa705bf6685d07cd4adbe28f457c44a2441c559b1bf506ddf511bc2a88c4ed6fb70bba6f975605ef0848bb6a49631959",
-    "x-tt-trace-id": "00-12830c2009fefb233fdd8ccada690546-12830c2009fefb23-01"
+    "tt-request-time": "1611323907230",
+    "x-Tt-Token": "0094fa705bf6685d07cd4adbe28f457c44017d3dc8b712eb077ce980b9c814a67cc8a4dbd735366447909f4d7c88506749044a3ec27055e0a0b094e6d8f810f996aa5fa5d4ee440343e282d3aa29f8fc878bac79c85f80ee81237dee7e70ebecf581d-1.0.1",
+    "x-tt-trace-id": "00-2a639e1609fefb233fd6f518d7880546-2a639e1609fefb23-01"
     },
     timeout: 60000,
 }
