@@ -208,7 +208,7 @@ if (!hotsoonsignheaderArr[0]) {
       $.index = i + 1;
       console.log(`\n开始【火山视频极速版${$.index}】`)
       //await userinfo()
-      if (h == 0 && hour == 22 || h == 0 && hour == 23) await sign_in()
+      if (h == 0 && hour == 6 || h == 0 && hour == 7) await sign_in()
       if (h%4 == 0) await treasure_task()
       await control()
       for (let j = 0; j < 3; j++) {
