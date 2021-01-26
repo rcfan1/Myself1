@@ -369,9 +369,9 @@ tts = Math.round(new Date().getTime() +
   await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`) 
       await GetUserInfo();//用户名   
       await coin();//账户信息    
-      await task();//日常任务
+      //await task();//日常任务
       await activity();//活动
-      await reportAss();//助力任务	  
+      //await reportAss();//助力任务	  
       await addCoin();//时段任务
       await addCoin2();//时段翻倍
         if (nowTimes.getHours() >= CASHTIME && CASH >= 0.5 && $.coin.result && $.coin.result.nowmoney >= CASH) {
