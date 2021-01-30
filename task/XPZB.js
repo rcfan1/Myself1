@@ -1,5 +1,6 @@
 /* ziye  单直播版
 
+
 github地址 https://github.com/ziye12
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
@@ -117,7 +118,7 @@ console.log(ddtime)
 
 if ($.isNode()) {
  // 没有设置 XP_CASH 则默认为 0 不提现
- CASH = process.env.XP_CASH || 0;
+ CASH = process.env.XP_CASH || 1;
 
  LIVE = process.env.XP_live || 60;
 } 
