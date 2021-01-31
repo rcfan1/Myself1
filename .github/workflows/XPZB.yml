@@ -4,7 +4,7 @@ name: XPZB_yuexi
 on:
   workflow_dispatch:
   schedule:
-     - cron: '19,49 0-8 * * *'
+     - cron: '19,49 0-11 * * *'
   watch:
     types: started
 jobs:
