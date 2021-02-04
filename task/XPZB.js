@@ -303,7 +303,7 @@ async function all() {
         await splimit(); //视频上限
         await newcashlist(); //提现查询
         await cashlist(); //今日提现查询
-        if (!cashcs.amount && CASH >= 1 && $.coin.data.balance / 100 >= CASH) {
+        if (!cashcs.amount && CASH >= 1 && $.coin.data.balance / 100 >= CASH && nowTimes.getHours() == 10) {
             await withdraw(); //提现
         }
         if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < LIVE) {
