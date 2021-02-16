@@ -72,7 +72,7 @@ if ($.isNode()) {
 
        console.log(`\n金钱豹开始执行签到任务！💦\n`)
        await jqbqd();
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       $.index = i + 1      
        console.log(`\n金钱豹已执行第一个看视频任务！💦\n等待10秒开始执行第二个看视频任务`)
        await jqbsp1();
@@ -102,7 +102,7 @@ if ($.isNode()) {
 	  await $.wait(10000);
 	  }
 	  console.log(`\n金钱豹执行转盘抽奖完成！💦\n等待10秒开始执行每日任务奖励领取`)
-	  await $.wait(10000);
+	  //await $.wait(10000);
 	  await jqbrw();
 	  await $.wait(3000);
 $.msg("","","金钱豹任务已全部完成！")
