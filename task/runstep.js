@@ -73,10 +73,10 @@ if ($.isNode()) {
 
 !(async () => {
   cc = (`${jsname}任务执行通知🔔`);
-  if (typeof $.getdata('runsteptoken') === "undefined") {
+/*  if (typeof $.getdata('runsteptoken') === "undefined") {
     console.log($.name, '【提示】请先前往获取cookie📲')
     return;
-  }
+  } */
   console.log(`\n✅ 检查共有多少个账号。。。`)
   await $.wait(4000)
   console.log(`👥 本次执行共${runsteptokenArr.length}个账号`)
