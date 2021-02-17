@@ -41,8 +41,17 @@ let runstepkeyVal = "";
 
 
 if ($.isNode()) {
-   runsteptokenVal = process.env.RUNSTEP_TOKEN
-   runstepkeyVal = process.env.RUNSTEP_KEY
+  
+if (process.env.RUNSTEP_TOKEN && process.env.RUNSTEP_TOKEN.split('\n').length > 0) {
+   runsteptokenVal = process.env.RUNSTEP_TOKEN.split('\n');
+  } else  {
+   runsteptokenVal = process.env.RUNSTEP_TOKEN.split()
+  };
+if (process.env.RUNSTEP_KEY && process.env.RUNSTEP_KEY.split('\n').length > 0) {
+   runstepkeyVal = process.env.RUNSTEP_KEY.split('\n');
+  } else  {
+   runstepkeyVal = process.env.RUNSTEP_KEY.split()
+  };
 
   Object.keys(runsteptokenVal).forEach((item) => {
     if (runsteptokenVal[item]) {
@@ -73,6 +82,10 @@ if ($.isNode()) {
 
 !(async () => {
   cc = (`${jsname}任务执行通知🔔`);
+   if (!runsteptokenArr[0]) {
+    console.log($.name, '【提示】请先前往获取cookie📲')
+    return;
+       }
 /*  if (typeof $.getdata('runsteptoken') === "undefined") {
     console.log($.name, '【提示】请先前往获取cookie📲')
     return;
