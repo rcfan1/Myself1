@@ -170,7 +170,7 @@ async function index() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/index?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+     // body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -239,7 +239,7 @@ async function signin() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/signin?date=${signdate}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+     // body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -272,7 +272,7 @@ async function pickstep(bbid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/pickstep?id=${bbid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -302,7 +302,7 @@ async function steptomoney() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/steptomoney?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -358,7 +358,7 @@ async function getharvest() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/getharvest?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -390,7 +390,7 @@ async function advlist() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/advlist?advkeys=index&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -425,7 +425,7 @@ async function center() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/center?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+     // body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -461,7 +461,7 @@ async function wheelindex() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelindex?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -524,7 +524,7 @@ async function wheelpick() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelpick?platform=iOS&${runsteptokenVal}&version=${version}&wheel_md5=${wheelmd5}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -609,7 +609,7 @@ async function wheelincr1() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelincr?platform=iOS&${runsteptokenVal}&type=1&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -637,7 +637,7 @@ async function wheelincr2() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelincr?platform=iOS&${runsteptokenVal}&type=2&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -670,7 +670,7 @@ async function wheelpickpacket(wheelredid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelpickpacket?index=${wheelredid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -722,7 +722,7 @@ async function shakeindex() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakeindex?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -804,7 +804,7 @@ async function shakeincr1() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakeincr?platform=iOS&${runsteptokenVal}&type=1&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -832,7 +832,7 @@ async function shakeincr2() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakeincr?platform=iOS&${runsteptokenVal}&type=2&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -865,7 +865,7 @@ async function shakepickpacket(shakeredid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakepickpacket?index=${shakeredid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+  //    body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -894,7 +894,7 @@ async function shakepick() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakepick?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -958,7 +958,7 @@ async function gglindex() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglindex?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1040,7 +1040,7 @@ async function gglincr1() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglincr?platform=iOS&${runsteptokenVal}&type=1&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1068,7 +1068,7 @@ async function gglincr2() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglincr?platform=iOS&${runsteptokenVal}&type=2&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1101,7 +1101,7 @@ async function gglpickpacket(gglredid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglpickpacket?index=${gglredid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1130,7 +1130,7 @@ async function gglpick() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglpick?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
