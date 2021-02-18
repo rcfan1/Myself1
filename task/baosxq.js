@@ -45,14 +45,14 @@ if ($.isNode()) {
    bsxqhd = process.env.BSXQ_HD.split()
   };
 	
-   Object.keys(rlurl).forEach((item) => {
-        if (rlurl[item]) {
-          rlurlArr.push(rlurl[item])
+   Object.keys(bsxqurl).forEach((item) => {
+        if (bsxqurl[item]) {
+          bsxqurlArr.push(bsxqurl[item])
         }
     });
-    Object.keys(rlheader).forEach((item) => {
-        if (rlheader[item]) {
-          rlheaderArr.push(rlheader[item])
+    Object.keys(bsxqhd).forEach((item) => {
+        if (bsxqhd[item]) {
+          bsxqhdArr.push(bsxqhd[item])
         }
     });  	
 	
