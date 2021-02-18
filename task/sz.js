@@ -71,7 +71,7 @@ if ($.isNode()) {
     await szck()
    
   } else {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 60; i++) {
       $.index = i + 1
       console.log(`\n闪挣第${i+1}次运行！💦\n等待60秒开始执行下一次任务`)
     await szsp();
