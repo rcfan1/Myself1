@@ -81,8 +81,8 @@ if ($.isNode()) {
           bsxqhd = bsxqhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【宝石星球${$.index}】`)
-          await bsxqqd();
      }
+          await bsxqqd();
   }
 })()
   .catch((e) => $.logErr(e))
@@ -110,17 +110,14 @@ $.log(bsxqhd)
 
 //宝石星球
 function bsxqqd(timeout = 0) {
-  return new Promise((resolve) => {
-      
+  return new Promise((resolve) => {   
 let url = {
         url : bsxqurl,
         headers : bsxqhd
 }
       $.get(url, async (err, resp, data) => {
-        try {
-           
+        try {           
     const result = JSON.parse(data)
-    console.log(result)
         if(result.code == 0){
         console.log('宝石星球回执:成功🌝 ')
 }
