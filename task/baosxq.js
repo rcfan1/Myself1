@@ -22,30 +22,66 @@ status = (status = ($.getval("bsxqstatus") || "1") ) > 1 ? `${status}` : ""; // 
 const bsxqurlArr = [], bsxqhdArr = [],bsxqbodyArr = [],bsxqcount = ''
 let bsxqurl = $.getdata('bsxqurl')
 let bsxqhd = $.getdata('bsxqhd')
-!(async () => {
-  if (typeof $request !== "undefined") {
-    await bsxqck()
+
+if ($.isNode()) {
+   if (process.env.BSXQ_URL && process.env.BSXQ_URL.indexOf('#') > -1) {
+   bsxqurl = process.env.BSXQ_URL.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.BSXQ_URL && process.env.BSXQ_URL.indexOf('\n') > -1) {
+   bsxqurl = process.env.BSXQ_URL.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
   } else {
-bsxqurlArr.push($.getdata('bsxqurl'))
+   bsxqurl = process.env.BSXQ_URL.split()
+  };
+  if (process.env.BSXQ_HD && process.env.BSXQ_HD.indexOf('#') > -1) {
+   bsxqhd = process.env.BSXQ_HD.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.BSXQ_HD && process.env.BSXQ_HD.indexOf('\n') > -1) {
+   bsxqhd = process.env.BSXQ_HD.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   bsxqhd = process.env.BSXQ_HD.split()
+  };
+	
+   Object.keys(rlurl).forEach((item) => {
+        if (rlurl[item]) {
+          rlurlArr.push(rlurl[item])
+        }
+    });
+    Object.keys(rlheader).forEach((item) => {
+        if (rlheader[item]) {
+          rlheaderArr.push(rlheader[item])
+        }
+    });  	
+	
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ } else {
+    bsxqurlArr.push($.getdata('bsxqurl'))
     bsxqhdArr.push($.getdata('bsxqhd'))
-    bsxqbodyArr.push($.getdata('bsxqbody'))
-    let bsxqcount = ($.getval('bsxqcount') || '1');
+    let rlcount = ($.getval('rlcount') || '1');
   for (let i = 2; i <= bsxqcount; i++) {
     bsxqurlArr.push($.getdata(`bsxqurl${i}`))
     bsxqhdArr.push($.getdata(`bsxqhd${i}`))
-    bsxqbodyArr.push($.getdata(`bsxqbody${i}`))
+  }
+}
+
+
+!(async () => {
+ if (!bsxqhdArr[0]) {
+    $.msg($.name, '【提示】请先获取宝石星球一cookie')
+    return;
   }
     console.log(`------------- 共${bsxqhdArr.length}个账号----------------\n`)
       for (let i = 0; i < bsxqhdArr.length; i++) {
-        if (bsxqhdArr[i]) {
-         
+        if (bsxqhdArr[i]) {        
           bsxqurl = bsxqurlArr[i];
           bsxqhd = bsxqhdArr[i];
-          bsxqbody = bsxqbodyArr[i];
           $.index = i + 1;
           console.log(`\n开始【宝石星球${$.index}】`)
           await bsxqqd();
-      }
      }
   }
 })()
@@ -78,8 +114,7 @@ function bsxqqd(timeout = 0) {
       
 let url = {
         url : bsxqurl,
-        headers : bsxqhd,
-        body : ''
+        headers : bsxqhd
 }
       $.get(url, async (err, resp, data) => {
         try {
