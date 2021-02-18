@@ -120,6 +120,7 @@ let url = {
         try {
            
     const result = JSON.parse(data)
+    console.log(result)
         if(result.code == 0){
         console.log('宝石星球回执:成功🌝 ')
 }
