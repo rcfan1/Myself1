@@ -353,7 +353,7 @@ async function all() {
             await playo(); //播放o       
             await videoo(); //视频o
 
-            if (LIVES != 2 && nowTimes.getHours() >= 14 && nowTimes.getHours() <= 20) {
+            if (LIVES != 2 && nowTimes.getHours() >= 9 && nowTimes.getHours() <= 16) {
                 await $.wait(30000)
                 tt = CS * 30 - 29
                 console.log(`📍本次视频运行需要${tt}秒` + '\n')
