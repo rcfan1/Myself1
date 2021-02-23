@@ -9,7 +9,7 @@
 
 可以去boxjs修改自动提现金额和循环次数
 最低提现额度为0.3元，默认提现1元
-最多任务次数为100次，默认为25次运行一回
+最多循环次数为100次，默认为100次
 
 本脚本以学习为主！
 首次运行脚本，会提示获取数据
@@ -20,7 +20,7 @@ TG电报群: https://t.me/hahaha8028
 
 我的邀请码 : 3950781  感谢大佬们填写
 
-注意:脚本默认循环次数为25次，运行时间大概5分钟,每天共运行四次超过一百次容易被微信阅读限制，切记。。。。。。
+注意:脚本每天运行一次就可以了，切记别多次运行，如不小心运行去把代理开关关闭一下就行，脚本默认运行次数为100次，运行时间大概15分钟,超过一百次容易被微信阅读限制，切记。。。。。。
 别几天就把羊薅死了，账号多的大佬觉得运行一次太久的话也可以去boxjs自行修改循环次数，比如修改循环次数为20，则每天运行五次脚本，循环次数为50则每天要运行两次脚本。。默认为循环次数为100一天运行一次，反正不管怎么修改，尽量每天循环次数别超过100
 
 boxjs地址 :  
@@ -32,7 +32,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试
 [task_local]
 #番茄看看
-15 12,14,16,20 * * * https://raw.githubusercontent.com/age174/-/main/fqkk.js, tag=番茄看看, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true
+15 12 * * * https://raw.githubusercontent.com/age174/-/main/fqkk.js, tag=番茄看看, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true
 
 
 [rewrite_local]
@@ -61,26 +61,80 @@ hostname = m.*.top
 
 
 const $ = new Env('番茄看看自动阅读');
+const notify = $.isNode() ?require('./sendNotify') : '';
 let status;
 status = (status = ($.getval("fqkkstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const fqkkurlArr = [], fqkkhdArr = [],fqkkbodyArr = [],fqkkcount = ''
+let fqkkurlArr = [], fqkkhdArr = [],fqkkbodyArr = [],fqkkcount = ''
 let fqkkurl = $.getdata('fqkkurl')
 let fqkkhd = $.getdata('fqkkhd')
 let fqkey = ''
-let fqkkxh = ($.getval('fqkkxh') || '25');  // 此处修改循环次数，默认一百
+let fqkkxh = ($.getval('fqkkxh') || '1');  // 此处修改循环次数，默认，20次
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.1元等于10，默认为提现一元，也就是100
 var zz = ''
+
+
+
+var hour=''
+var minute=''
+if ($.isNode()) {
+   hour = new Date( new Date().getTime() + 8 * 60 * 60 * 1000 ).getHours();
+   minute = new Date( new Date().getTime() + 8 * 60 * 60 * 1000 ).getMinutes();
+}else{
+   hour = (new Date()).getHours();
+   minute = (new Date()).getMinutes();
+}
+
+
+
+
+
+
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck()
    
-  } else {fqkkurlArr.push($.getdata('fqkkurl'))
+  } else
+  {fqkkurlArr.push($.getdata('fqkkurl'))
     fqkkhdArr.push($.getdata('fqkkhd'))
     let fqkkcount = ($.getval('fqkkcount') || '1');
   for (let i = 2; i <= fqkkcount; i++) {
     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
     fqkkhdArr.push($.getdata(`fqkkhd${i}`))
   }
+   
+   if ($.isNode()) {
+   if (process.env.fqkkurl && process.env.fqkkurl.indexOf('#') > -1) {
+   fqkkurlArr = process.env.fqkkurl.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.fqkkurl && process.env.fqkkurl.indexOf('\n') > -1) {
+   fqkkurlArr = process.env.fqkkurl.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   fqkkurlArr = process.env.fqkkurl.split()
+  };
+  if (process.env.fqkkhd && process.env.fqkkhd.indexOf('#') > -1) {
+   fqkkhdArr = process.env.fqkkhd.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.fqkkhd && process.env.fqkkhd.indexOf('\n') > -1) {
+   fqkkhdArr = process.env.fqkkhd.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   fqkkhdArr = process.env.fqkkhd.split()
+  };
+
+//fqkkcount = process.env.fqkkcount;
+fqkkxh="20";//process.env.fqkkxh;
+fqtx=process.env.fqtx;
+
+
+
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ }
+
     console.log(`------------- 共${fqkkhdArr.length}个账号-------------\n`)
       for (let i = 0; i < fqkkhdArr.length; i++) {
         if (fqkkhdArr[i]) {
@@ -94,11 +148,10 @@ var zz = ''
       console.log(`\n番茄看看开始执行第${x+1}次阅读任务！💦\n`)
     await fqkk1();
 if(zz==1){
-console.log('番茄看看任务异常，请查看脚本运行日志查看情况!')
+$.msg("","",'番茄看看任务异常，请查看脚本运行日志查看情况!')
+break;
 }
-  }if(zz==1){
-$.msg($.name,'','番茄看看任务异常，请查看脚本运行日志查看情况!')
-}
+  }
   await fqkktx();
 }}}
 })()
@@ -131,11 +184,11 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
+        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg)
 }
-if(result.code !== 0){
+if(result.code == 502 || result.code == 550 || result.code == 413 || resule.code == 600){
 
-       console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
+       console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg)
 zz = 1
 }
    
@@ -158,16 +211,12 @@ let url = {
 }      
       $.post(url, async (err, resp, data) => {
         try {
-        if (err) {
-          console.log("⛔️API查询请求失败❌ ‼️‼️");
-          console.log(JSON.stringify(err));
-          $.logErr(err);
-        } else {
            
     const result = JSON.parse(data)
        console.log('\n番茄看看key提交成功,即将开始领取阅读奖励')       
-       
-        }} catch (e) {
+       await $.wait(8000);
+        await fqkk3();
+        } catch (e) {
           //$.logErr(e, resp);
         } finally {
           resolve()
@@ -198,11 +247,11 @@ let url = {
         console.log('\n番茄看看获取key回执:成功🌝 ')
         fqkey = result.data.jkey
         console.log(fqkey)
+        await $.wait(1000);
         await fqkk2()
-}       await $.wait(15000);
-        await fqkk3();   
-if(result.code !== 0){
-console.log('番茄看看获取key回执:失败🚫 '+result.msg)
+}
+if(result.code == 401){
+        $.msg('','','番茄看看获取key回执:失败🚫 '+result.msg+'请重新获取数据。')
 
 }
         } catch (e) {
@@ -230,7 +279,7 @@ let url = {
         if(result.code == 0){
         console.log('\n番茄看看提现回执:成功🌝 ')
 }
-if(result.code !== 0){
+if(result.code == 502 || result.code == 505 || result.code == 413 || result.code == 501){
 
        console.log('\n番茄看看提现回执:失败🚫 '+result.msg)
 }
