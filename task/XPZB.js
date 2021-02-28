@@ -124,7 +124,7 @@ if ($.isNode()) {
     // 没有设置 XP_CASH 则默认为 0 不提现
     CASH = process.env.XP_CASH || 1;
     // 没有设置 XP_live 则默认0
-    LIVE = process.env.XP_live || 2;
+    LIVE = process.env.XP_live || 1;
     // 没有设置 XP_phone 则默认为 0 
     phone = process.env.XP_phone || 0;
     // 没有设置 XP_sms 则默认0  不获取TOKEN
@@ -353,16 +353,16 @@ async function all() {
             await playo(); //播放o       
             await videoo(); //视频o
 
-            if (LIVES != 2  && nowTimes.getHours() >= 10 && nowTimes.getHours() <= 17) {
+            if (LIVES != 2) {
                 await $.wait(30000)
                 tt = CS * 30 - 29
                 console.log(`📍本次视频运行需要${tt}秒` + '\n')
                 await play(); //播放       
                 await video(); //视频
                 await $.wait(tt * 1000)
-             /*   if (!newcashcs.amount) {
+                if (!newcashcs.amount) {
                     await newvideo(); //新人福利
-                } */
+                }
                 if ($.video.data && $.video.data.goldCoinNumber != 0 && videoPublishId6) {
                     await goldvideo(); //金蛋视频
                 }
